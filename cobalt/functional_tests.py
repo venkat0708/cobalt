@@ -7,13 +7,14 @@ class NewVisitorTest(unittest.TestCase):
 		self.browser = webdriver.Firefox()
 		self.browser.implicitly_wait(3)
 	def tearDown(self):
+		self.browser.implicitly_wait(3)
 		self.browser.quit()
 		
 	def test_can_visit_home_page(self):
 		
-		self.browser.get('http://localhost:8000')
+		self.browser.get('http://localhost:8000/inventory/')
 		
-		self.assertIn('Django', self.browser.title)
+		self.assertIn('Inventory list', self.browser.title)
 		
 		#self.fail('finish the test')
 	
