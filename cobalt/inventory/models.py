@@ -14,3 +14,6 @@ class Product(BaseEntity):
 	total_units = models.IntegerField(blank=True,null=True)
 	consumed_units = models.IntegerField(blank=True,null=True)
 	minimum_units_to_be_maintained = models.IntegerField(blank=True,null=True)
+	
+	def __str__(self):
+		return self.name
