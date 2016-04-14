@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} list of products{% endblock %}
+
+{% block content %}
+	<h1>List of products</h1>
+	{% if products %}
+		<table id="list" class="table">
+			<tr>
+				<th>Name</th>
+				<th>Company</th>
+				<th>Price</th>
+				<th>Total units</th>
+				<th>Consumed units</th>
+				<th>Minimum to be maintained</th>
+			</tr>
+			{% for product in products %}
+				<tr>
+					<td>{{ product.name }}</td>
+					<td>{{ product.company }}</td>
+					<td>{{ product.price }}</td>
+					<td>{{ product.total_units }}</td>
+					<td>{{ product.consumed_units }}</td>
+					<td>{{ product.minimum_units_to_be_maintained }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<p>No entries to be displayed</p>
+	{% endif %}
+{% endblock %}
